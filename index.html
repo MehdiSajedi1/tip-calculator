@@ -22,7 +22,7 @@
         <section class='form__user-inputs'>
           <div class="form__bill" id='bill-container'>
             <p>Bill</p>
-            <input id='bill' type="text" placeholder=0 autocomplete="off">
+            <input id='bill' type="number" placeholder=0 autocomplete="off">
           </div>
 
           <div class="form__tip" id="tip-container">
@@ -30,27 +30,27 @@
 
             <div class="form__tip__options">
               <div>
-                <label class='tip-label' for="tip-5">5%</label>
                 <input class='tip-input' id="tip-5" value=5 type="radio" name='tip-percent' autocomplete="off">
+                <label class='tip-label' for="tip-5">5%</label>
               </div>
               <div>
-                <label class='tip-label' for="tip-10">10%</label>
                 <input class='tip-input' id="tip-10" value=10 type="radio" name='tip-percent' autocomplete="off">
+                <label class='tip-label' for="tip-10">10%</label>
               </div>
               <div>
-                <label class='tip-label' for="tip-15">15%</label>
                 <input class='tip-input' id="tip-15" value=15 type="radio" name='tip-percent' autocomplete="off">
+                <label class='tip-label' for="tip-15">15%</label>
               </div>
               <div>
-                <label class='tip-label' for="tip-25">25%</label>
                 <input class='tip-input' id="tip-25" value=25 type="radio" name='tip-percent' autocomplete="off">
+                <label class='tip-label' for="tip-25">25%</label>
               </div>
               <div>
-                <label class='tip-label' for="tip-50">50%</label>
                 <input class='tip-input' id="tip-50" value=50 type="radio" name='tip-percent' autocomplete="off">
+                <label class='tip-label' for="tip-50">50%</label>
               </div>
               <div>
-                <input id='custom-tip-input' type="text" placeholder="Custom" autocomplete="off">
+                <input id='custom-tip-input' type="number" placeholder="Custom" autocomplete="off">
               </div>
             </div>
 
@@ -58,7 +58,7 @@
 
           <div class="form__people" id="people-container">
             <p>Number of People</p>
-            <input id='people' type="text" placeholder=0 autocomplete="off">
+            <input id='people' type="number" placeholder=0 autocomplete="off">
           </div>
         </section>
 
@@ -68,7 +68,7 @@
               <p>Tip Amount</p>
               <small>/ person</small>
             </div>
-            <h1 id='tip-amount'>$0</h1>
+            <h1 id='tip-amount'>$0.00</h1>
           </div>
 
           <div class="form__output__item">
@@ -76,7 +76,7 @@
               <p>Total</p>
               <small>/ person</small>
             </div>
-            <h1 id='total-amount'>$0</h1>
+            <h1 id='total-amount'>$0.00</h1>
           </div>
           <input class='btn btn--reset' id='reset-btn' type="reset">
         </section>

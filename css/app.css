@@ -14,8 +14,10 @@ label {
   cursor: pointer; }
 
 input {
-  font-size: 24px; }
-  input[type='text'] {
+  font-size: 24px;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */ }
+  input[type='number'] {
     font-family: 'Space Mono', sans-serif;
     background-color: #e9f4f6;
     color: #00494d;
@@ -26,8 +28,18 @@ input {
     padding: 5px 15px;
     width: 100%;
     border-radius: 5px; }
-    input[type='text']:active, input[type='text']:focus {
+    input[type='number']:active, input[type='number']:focus {
       border: 2px solid #26c0ab; }
+  input[type='radio'] {
+    position: absolute; }
+  input.selected + label {
+    background-color: #26c0ab;
+    color: #00494d; }
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  input[type='number'] {
+    -moz-appearance: textfield; }
 
 .btn {
   font-family: 'Space Mono', sans-serif;
@@ -41,11 +53,19 @@ input {
   text-transform: uppercase;
   background-color: #26c0ab;
   color: #00494d;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+  border: 3px solid #26c0ab; }
   .btn--reset {
     margin-top: 1.5rem; }
-  .btn:active {
-    transform: scale(0.98); }
+  .btn:focus {
+    background-color: #00494d;
+    color: #26c0ab;
+    border: 3px solid #26c0ab; }
+  .btn:hover {
+    background-color: #00494d;
+    color: #26c0ab;
+    border: 3px solid #26c0ab; }
 
 .header__text {
   text-transform: uppercase;
@@ -112,10 +132,13 @@ input {
         .form__tip__options label.selected {
           background-color: #26c0ab;
           color: #00494d; }
-      .form__tip__options input:not([type='text']) {
-        display: none; }
-      .form__tip__options input[type='text']::placeholder {
+      .form__tip__options input:not([type='number']) {
+        opacity: 0; }
+      .form__tip__options input[type='number']::placeholder {
         opacity: 0.667; }
+      .form__tip__options input[type='radio']:focus + label {
+        background-color: #a4dbd2;
+        color: #00494d; }
     .form__tip.show-error::after {
       content: 'Please enter a valid number';
       position: absolute;
