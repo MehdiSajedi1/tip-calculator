@@ -2,8 +2,6 @@
 
 // User can begin input with a bunch of 0's followed by a number and it will work
 // User can enter more than 2 decimal places. Either disallow entering more than 2 (for bill and custom tip) or let them type it out but then round it on form change. Same general idea for people input but with an integer.
-// Can't tab to radio buttons
-// Safari can't tab to reset
 
 const formEl = document.querySelector('#form');
 

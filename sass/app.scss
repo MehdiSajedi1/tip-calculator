@@ -51,11 +51,6 @@ input {
     position: absolute;
   }
 
-  // &.selected + label {
-  //   background-color: $clr-strong-cyan;
-  //   color: $clr-dark-cyan;
-  // }
-
   /* Chrome, Safari, Edge, Opera */
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -184,16 +179,9 @@ input {
           background-color: $clr-light-cyan;
           color: $clr-dark-cyan;
         }
-
-        // &.selected {
-        //   background-color: $clr-strong-cyan;
-        //   color: $clr-dark-cyan;
-        // }
       }
 
-      // Radio buttons
       input:not([type='number']) {
-        // display: none;
         opacity: 0;
         width: 0;
         height: 0;
