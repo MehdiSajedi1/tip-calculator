@@ -6,7 +6,6 @@ $clr-light-cyan: hsl(170, 43%, 75%);
 $clr-dark-grayish-cyan1: hsl(186, 14%, 43%);
 $clr-dark-grayish-cyan2: hsl(184, 14%, 56%);
 $clr-light-grayish-cyan1: hsl(185, 41%, 84%);
-$clr-light-grayish-cyan2: hsl(189, 41%, 97%);
 $clr-light-grayish-cyan2: hsl(189, 41%, 94%);
 $clr-white: hsl(0, 0%, 100%);
 $clr-error: rgb(214, 114, 114);
@@ -199,7 +198,7 @@ input {
         color: $clr-dark-cyan;
       }
 
-      input[type='radio']:checked + label {
+      input[type='radio'].active:checked + label {
         background-color: $clr-strong-cyan;
         color: $clr-dark-cyan;
       }

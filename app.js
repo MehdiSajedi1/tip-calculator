@@ -12,7 +12,7 @@ const peopleEl = document.querySelector('#people');
 const customTipEl = document.querySelector('#custom-tip-input');
 
 const tipInputs = document.querySelectorAll('.tip-input');
-const tipLabels = document.querySelectorAll('.tip-label');
+// const tipLabels = document.querySelectorAll('.tip-label');
 const resetBtn = document.querySelector('#reset-btn');
 
 // Error handling
@@ -69,13 +69,15 @@ tipEl.addEventListener('click', (e) => {
     tipAmount = +e.target.value;
     customTipEl.value = '';
     tipContainer.classList.remove('show-error');
+
+    e.target.classList.add('active');
   }
 });
 
 // Custom tip input
 customTipEl.addEventListener('input', (e) => {
   tipAmount = +e.target.value;
-  tipLabels.forEach((el) => el.classList.remove('selected'));
+  tipInputs.forEach((input) => input.classList.remove('active'));
   validateNumberInput(customTipEl, tipContainer, 'custom');
 });
 
@@ -104,7 +106,6 @@ formEl.addEventListener('change', () => {
 
 // Reset button
 resetBtn.addEventListener('click', (e) => {
-  tipLabels.forEach((el) => el.classList.remove('selected'));
   billAmount = null;
   tipAmount = null;
   peopleAmount = null;

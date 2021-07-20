@@ -127,7 +127,7 @@ input {
   .form__tip__options input[type='radio']:focus + label {
     background-color: #a4dbd2;
     color: #00494d; }
-  .form__tip__options input[type='radio']:checked + label {
+  .form__tip__options input[type='radio'].active:checked + label {
     background-color: #26c0ab;
     color: #00494d; }
 
