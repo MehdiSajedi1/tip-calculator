@@ -41,12 +41,11 @@ input {
   text-transform: uppercase;
   background-color: #26c0ab;
   color: #00494d;
-  cursor: pointer;
-  border: 2px solid #26c0ab; }
+  cursor: pointer; }
   .btn--reset {
     margin-top: 1.5rem; }
   .btn:active {
-    transform: scale(0.97); }
+    transform: scale(0.98); }
 
 .header__text {
   text-transform: uppercase;
@@ -75,48 +74,72 @@ input {
       margin: 1rem 0; }
       .form__user-inputs > * p {
         margin-bottom: 10px; }
-  .form__bill input {
-    background-image: url("../images/icon-dollar.svg");
-    background-repeat: no-repeat;
-    background-position: 15px 50%; }
-    .form__bill input::placeholder {
-      opacity: 1; }
-  .form__tip__options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; }
-    .form__tip__options label {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      padding: 7.5px 0;
-      background-color: #00494d;
-      border-radius: 5px;
-      text-align: center;
-      color: white;
-      cursor: pointer; }
-      .form__tip__options label:hover {
-        background-color: #26c0ab;
-        color: #00494d; }
-      .form__tip__options label.selected {
-        background-color: #26c0ab;
-        color: #00494d; }
-    .form__tip__options input:not([type='text']) {
-      display: none; }
-    .form__tip__options .custom-tip {
-      padding: 0;
-      background-color: #e9f4f6; }
-      .form__tip__options .custom-tip input {
+  .form__bill {
+    position: relative; }
+    .form__bill input {
+      background-image: url("../images/icon-dollar.svg");
+      background-repeat: no-repeat;
+      background-position: 15px 50%; }
+    .form__bill.show-error::after {
+      content: 'Please enter a valid number';
+      position: absolute;
+      bottom: -27px;
+      right: 5px;
+      color: #d67272;
+      font-size: 14px; }
+    .form__bill.show-error input {
+      border: 2px solid #d67272; }
+  .form__tip {
+    position: relative; }
+    .form__tip__options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem; }
+      .form__tip__options label {
+        display: inline-block;
+        width: 100%;
         height: 100%;
-        color: #00494d; }
-        .form__tip__options .custom-tip input::placeholder {
-          opacity: 0.667; }
-  .form__people input {
-    background-image: url("../images/icon-person.svg");
-    background-repeat: no-repeat;
-    background-position: 15px 50%; }
-    .form__people input::placeholder {
-      opacity: 1; }
+        padding: 7.5px 0;
+        background-color: #00494d;
+        border-radius: 5px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        transition: all 0.25s ease-in; }
+        .form__tip__options label:hover {
+          background-color: #a4dbd2;
+          color: #00494d; }
+        .form__tip__options label.selected {
+          background-color: #26c0ab;
+          color: #00494d; }
+      .form__tip__options input:not([type='text']) {
+        display: none; }
+      .form__tip__options input[type='text']::placeholder {
+        opacity: 0.667; }
+    .form__tip.show-error::after {
+      content: 'Please enter a valid number';
+      position: absolute;
+      bottom: -27px;
+      right: 5px;
+      color: #d67272;
+      font-size: 14px; }
+    .form__tip.show-error input {
+      border: 2px solid #d67272; }
+  .form__people {
+    position: relative; }
+    .form__people input {
+      background-image: url("../images/icon-person.svg");
+      background-repeat: no-repeat;
+      background-position: 15px 50%; }
+    .form__people.show-error::after {
+      content: 'Please enter a valid number';
+      position: absolute;
+      bottom: -27px;
+      right: 5px;
+      color: #d67272;
+      font-size: 14px; }
+    .form__people.show-error input {
+      border: 2px solid #d67272; }
   .form__output {
     background-color: #00494d;
     padding: 1.5rem;

@@ -20,12 +20,12 @@
       <form class='form' id='form'>
 
         <section class='form__user-inputs'>
-          <div class="form__bill">
+          <div class="form__bill" id='bill-container'>
             <p>Bill</p>
             <input id='bill' type="text" placeholder=0 autocomplete="off">
           </div>
 
-          <div class="form__tip">
+          <div class="form__tip" id="tip-container">
             <p>Select Tip %</p>
 
             <div class="form__tip__options">
@@ -49,16 +49,16 @@
                 <label class='tip-label' for="tip-50">50%</label>
                 <input class='tip-input' id="tip-50" value=50 type="radio" name='tip-percent' autocomplete="off">
               </div>
-              <div class='custom-tip'>
-                <input class='' type="text" placeholder="Custom">
+              <div>
+                <input id='custom-tip-input' type="text" placeholder="Custom" autocomplete="off">
               </div>
             </div>
 
           </div>
 
-          <div class="form__people">
+          <div class="form__people" id="people-container">
             <p>Number of People</p>
-            <input id='people' type="text" placeholder=1 autocomplete="off">
+            <input id='people' type="text" placeholder=0 autocomplete="off">
           </div>
         </section>
 

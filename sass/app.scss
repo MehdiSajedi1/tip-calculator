@@ -2,13 +2,16 @@
 
 $clr-strong-cyan: hsl(172, 67%, 45%);
 $clr-dark-cyan: hsl(183, 100%, 15%);
+$clr-light-cyan: hsl(170, 43%, 75%);
 $clr-dark-grayish-cyan1: hsl(186, 14%, 43%);
 $clr-dark-grayish-cyan2: hsl(184, 14%, 56%);
 $clr-light-grayish-cyan1: hsl(185, 41%, 84%);
 $clr-light-grayish-cyan2: hsl(189, 41%, 97%);
 $clr-light-grayish-cyan2: hsl(189, 41%, 94%);
 $clr-white: hsl(0, 0%, 100%);
+$clr-error: rgb(214, 114, 114);
 $border-radius: 5px;
+$transition: all 0.25s ease-in;
 
 * {
   margin: 0;
@@ -62,17 +65,13 @@ input {
   background-color: $clr-strong-cyan;
   color: $clr-dark-cyan;
   cursor: pointer;
-  border: 2px solid $clr-strong-cyan;
 
   &--reset {
     margin-top: 1.5rem;
   }
 
   &:active {
-    // background-color: $clr-dark-cyan;
-    // color: $clr-strong-cyan;
-    // border: 2px solid $clr-strong-cyan;
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
 }
 
@@ -116,18 +115,31 @@ input {
   }
 
   &__bill {
+    position: relative;
+
     input {
       background-image: url('../images/icon-dollar.svg');
       background-repeat: no-repeat;
       background-position: 15px 50%;
+    }
 
-      &::placeholder {
-        opacity: 1;
-      }
+    &.show-error::after {
+      content: 'Please enter a valid number';
+      position: absolute;
+      bottom: -27px;
+      right: 5px;
+      color: $clr-error;
+      font-size: 14px;
+    }
+
+    &.show-error input {
+      border: 2px solid $clr-error;
     }
   }
 
   &__tip {
+    position: relative;
+
     &__options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -143,9 +155,10 @@ input {
         text-align: center;
         color: $clr-white;
         cursor: pointer;
+        transition: $transition;
 
         &:hover {
-          background-color: $clr-strong-cyan;
+          background-color: $clr-light-cyan;
           color: $clr-dark-cyan;
         }
 
@@ -159,35 +172,47 @@ input {
         display: none;
       }
 
-      // input:checked {
-      //   margin: 100px;
-      // }
-
-      .custom-tip {
-        padding: 0;
-        background-color: $clr-light-grayish-cyan2;
-
-        input {
-          height: 100%;
-          color: $clr-dark-cyan;
-
-          &::placeholder {
-            opacity: 0.667;
-          }
+      input[type='text'] {
+        &::placeholder {
+          opacity: 0.667;
         }
       }
+    }
+
+    &.show-error::after {
+      content: 'Please enter a valid number';
+      position: absolute;
+      bottom: -27px;
+      right: 5px;
+      color: $clr-error;
+      font-size: 14px;
+    }
+
+    &.show-error input {
+      border: 2px solid $clr-error;
     }
   }
 
   &__people {
+    position: relative;
+
     input {
       background-image: url('../images/icon-person.svg');
       background-repeat: no-repeat;
       background-position: 15px 50%;
+    }
 
-      &::placeholder {
-        opacity: 1;
-      }
+    &.show-error::after {
+      content: 'Please enter a valid number';
+      position: absolute;
+      bottom: -27px;
+      right: 5px;
+      color: $clr-error;
+      font-size: 14px;
+    }
+
+    &.show-error input {
+      border: 2px solid $clr-error;
     }
   }
 
