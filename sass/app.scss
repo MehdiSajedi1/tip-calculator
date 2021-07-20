@@ -23,11 +23,7 @@ body {
   font-family: 'Space Mono', sans-serif;
   background-color: $clr-light-grayish-cyan1;
   color: $clr-dark-grayish-cyan1;
-}
-
-label {
-  font-size: 24px;
-  cursor: pointer;
+  font-weight: 700;
 }
 
 input {
@@ -55,10 +51,10 @@ input {
     position: absolute;
   }
 
-  &.selected + label {
-    background-color: $clr-strong-cyan;
-    color: $clr-dark-cyan;
-  }
+  // &.selected + label {
+  //   background-color: $clr-strong-cyan;
+  //   color: $clr-dark-cyan;
+  // }
 
   /* Chrome, Safari, Edge, Opera */
   &::-webkit-outer-spin-button,
@@ -93,12 +89,7 @@ input {
     margin-top: 1.5rem;
   }
 
-  &:focus {
-    background-color: $clr-dark-cyan;
-    color: $clr-strong-cyan;
-    border: 3px solid $clr-strong-cyan;
-  }
-
+  &:focus,
   &:hover {
     background-color: $clr-dark-cyan;
     color: $clr-strong-cyan;
@@ -129,54 +120,55 @@ input {
   padding: 1rem 0;
 }
 
+// Form
 .form {
-  font-weight: 700;
-
   &__user-inputs {
     display: flex;
     flex-direction: column;
 
+    // Selects Bill, Tip, and People container
     > * {
+      position: relative;
       margin: 1rem 0;
 
       p {
         margin-bottom: 10px;
       }
+
+      &.show-error::after {
+        content: 'Please enter a valid number';
+        position: absolute;
+        bottom: -27px;
+        right: 5px;
+        color: $clr-error;
+        font-size: 14px;
+      }
+
+      &.show-error input {
+        border: 2px solid $clr-error;
+      }
     }
   }
 
+  // Bill
   &__bill {
-    position: relative;
-
     input {
       background-image: url('../images/icon-dollar.svg');
       background-repeat: no-repeat;
       background-position: 15px 50%;
     }
-
-    &.show-error::after {
-      content: 'Please enter a valid number';
-      position: absolute;
-      bottom: -27px;
-      right: 5px;
-      color: $clr-error;
-      font-size: 14px;
-    }
-
-    &.show-error input {
-      border: 2px solid $clr-error;
-    }
   }
 
+  // Tip
   &__tip {
-    position: relative;
-
     &__options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
 
       label {
+        font-size: 24px;
+        cursor: pointer;
         display: inline-block;
         width: 100%;
         height: 100%;
@@ -193,19 +185,21 @@ input {
           color: $clr-dark-cyan;
         }
 
-        &.selected {
-          background-color: $clr-strong-cyan;
-          color: $clr-dark-cyan;
-        }
+        // &.selected {
+        //   background-color: $clr-strong-cyan;
+        //   color: $clr-dark-cyan;
+        // }
       }
 
+      // Radio buttons
       input:not([type='number']) {
         // display: none;
         opacity: 0;
-        // width: 0;
-        // height: 0;
+        width: 0;
+        height: 0;
       }
 
+      // Custom tip
       input[type='number'] {
         &::placeholder {
           opacity: 0.667;
@@ -216,45 +210,24 @@ input {
         background-color: $clr-light-cyan;
         color: $clr-dark-cyan;
       }
-    }
 
-    &.show-error::after {
-      content: 'Please enter a valid number';
-      position: absolute;
-      bottom: -27px;
-      right: 5px;
-      color: $clr-error;
-      font-size: 14px;
-    }
-
-    &.show-error input {
-      border: 2px solid $clr-error;
+      input[type='radio']:checked + label {
+        background-color: $clr-strong-cyan;
+        color: $clr-dark-cyan;
+      }
     }
   }
 
+  // People
   &__people {
-    position: relative;
-
     input {
       background-image: url('../images/icon-person.svg');
       background-repeat: no-repeat;
       background-position: 15px 50%;
     }
-
-    &.show-error::after {
-      content: 'Please enter a valid number';
-      position: absolute;
-      bottom: -27px;
-      right: 5px;
-      color: $clr-error;
-      font-size: 14px;
-    }
-
-    &.show-error input {
-      border: 2px solid $clr-error;
-    }
   }
 
+  // Calculation Output
   &__output {
     background-color: $clr-dark-cyan;
     padding: 1.5rem;

@@ -30,7 +30,7 @@ let billAmount, tipAmount, peopleAmount;
 let allowCalculation;
 
 // Form validating / showing error messages
-function validateInput(element, container, inputField) {
+function validateNumberInput(element, container, inputField) {
   const delay = setTimeout(() => {
     if (+element.value <= 0 || isNaN(+element.value)) {
       container.classList.add('show-error');
@@ -39,7 +39,8 @@ function validateInput(element, container, inputField) {
       container.classList.remove('show-error');
       allowCalculation = true;
     }
-    // In addition for people input field, check that is an integer
+
+    // For people input, check that is an integer
     if (inputField === 'people' && !Number.isInteger(+element.value)) {
       container.classList.add('show-error');
       allowCalculation = false;
@@ -55,61 +56,35 @@ function validateInput(element, container, inputField) {
       allowCalculation = true;
     }
     clearTimeout(delay);
-  }, 650);
+  }, 1000);
 }
 
 // Bill input
 billEl.addEventListener('input', (e) => {
   billAmount = +e.target.value;
-  validateInput(billEl, billContainer);
+  validateNumberInput(billEl, billContainer);
 });
 
 // Tip inputs
 tipEl.addEventListener('click', (e) => {
-  // Click will register on both input and label.
-  // If statements used to manipulate classes from the proper elements
   if (e.target.classList.contains('tip-input')) {
     tipAmount = +e.target.value;
     customTipEl.value = '';
     tipContainer.classList.remove('show-error');
   }
-
-  if (e.target.classList.contains('tip-label')) {
-    tipLabels.forEach((el) => el.classList.remove('selected'));
-    e.target.classList.add('selected');
-  }
 });
-
-// ********************************************************
-
-tipEl.addEventListener('keyup', (e) => {
-  // Click will register on both input and label.
-  // If statements used to manipulate classes from the proper elements
-  if (e.code === 'Space') {
-    if (e.target.classList.contains('tip-input')) {
-      console.log(e.target);
-      tipAmount = +e.target.value;
-      customTipEl.value = '';
-      tipContainer.classList.remove('show-error');
-      tipInputs.forEach((el) => el.classList.remove('selected'));
-      e.target.classList.add('selected');
-    }
-  }
-});
-
-// ********************************************************
 
 // Custom tip input
 customTipEl.addEventListener('input', (e) => {
   tipAmount = +e.target.value;
   tipLabels.forEach((el) => el.classList.remove('selected'));
-  validateInput(customTipEl, tipContainer, 'custom');
+  validateNumberInput(customTipEl, tipContainer, 'custom');
 });
 
 // People input
 peopleEl.addEventListener('input', (e) => {
   peopleAmount = +e.target.value;
-  validateInput(peopleEl, peopleContainer, 'people');
+  validateNumberInput(peopleEl, peopleContainer, 'people');
 });
 
 // Form change
