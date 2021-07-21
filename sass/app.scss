@@ -233,13 +233,13 @@ input {
 
       p {
         color: $clr-white;
-        font-weight: 700;
       }
 
       small {
         color: $clr-dark-grayish-cyan2;
-        font-weight: 700;
       }
     }
   }
 }
+
+@import 'media';

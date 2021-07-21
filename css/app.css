@@ -149,8 +149,40 @@ input {
       color: #26c0ab;
       font-size: 2rem; }
     .form__output__item p {
-      color: white;
-      font-weight: 700; }
+      color: white; }
     .form__output__item small {
-      color: #7f9c9f;
-      font-weight: 700; }
+      color: #7f9c9f; }
+
+@media (min-width: 992px) {
+  body {
+    height: 100vh; }
+  .wrappuh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-top: 5vh; }
+  .header {
+    margin-bottom: 4vh; }
+  .app-container {
+    border-radius: 20px;
+    width: 950px; }
+  .app {
+    width: 93%; }
+  .form {
+    display: flex;
+    column-gap: 2rem; }
+    .form__user-inputs {
+      padding: 1rem 1rem 1rem 0;
+      width: 50%; }
+    .form__output {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .form__output__item {
+        padding-bottom: 0.5rem; }
+      .form__output h1 {
+        font-size: 40px; }
+    .form__tip__options {
+      grid-template-columns: repeat(3, 1fr); } }
