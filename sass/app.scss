@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-$clr-strong-cyan: hsl(172, 67%, 45%);
-$clr-dark-cyan: hsl(183, 100%, 15%);
-$clr-light-cyan: hsl(170, 43%, 75%);
-$clr-dark-grayish-cyan1: hsl(186, 14%, 43%);
-$clr-dark-grayish-cyan2: hsl(184, 14%, 56%);
-$clr-light-grayish-cyan1: hsl(185, 41%, 84%);
-$clr-light-grayish-cyan2: hsl(189, 41%, 94%);
-$clr-white: hsl(0, 0%, 100%);
-$clr-error: rgb(214, 114, 114);
-$border-radius: 5px;
+$clr-strong-cyan: #26c0ab;
+$clr-dark-cyan: #00494d;
+$clr-light-cyan: #a4dbd2;
+$clr-dark-grayish-cyan1: #5e7a7d;
+$clr-dark-grayish-cyan2: #7f9c9f;
+$clr-light-grayish-cyan1: #c5e4e7;
+$clr-light-grayish-cyan2: #e9f4f6;
+$clr-white: #fff;
+$clr-error: #d67272;
+$border-radius-element: 5px;
+$border-radius-card: 20px;
 $transition: all 0.25s ease-in;
 
 * {
@@ -38,7 +39,8 @@ input {
     text-align: right;
     padding: 5px 15px;
     width: 100%;
-    border-radius: $border-radius;
+    border-radius: $border-radius-element;
+    -webkit-appearance: none;
 
     &:active,
     &:focus {
@@ -68,7 +70,7 @@ input {
   border: none;
   outline: none;
   padding: 10px 0;
-  border-radius: $border-radius;
+  border-radius: $border-radius-element;
   font-size: 20px;
   font-weight: 700;
   width: 100%;
@@ -77,17 +79,16 @@ input {
   color: $clr-dark-cyan;
   cursor: pointer;
   transition: $transition;
-  border: 3px solid $clr-strong-cyan;
 
   &--reset {
     margin-top: 1.5rem;
+    -webkit-appearance: none;
   }
 
-  &:focus,
-  &:hover {
-    background-color: $clr-dark-cyan;
-    color: $clr-strong-cyan;
-    border: 3px solid $clr-strong-cyan;
+  &:hover,
+  &:focus-visible {
+    background-color: $clr-light-cyan;
+    color: $clr-dark-cyan;
   }
 }
 
@@ -105,7 +106,7 @@ input {
 
 .app-container {
   background-color: $clr-white;
-  border-radius: 20px 20px 0 0;
+  border-radius: $border-radius-card;
 }
 
 .app {
@@ -168,7 +169,7 @@ input {
         height: 100%;
         padding: 7.5px 0;
         background-color: $clr-dark-cyan;
-        border-radius: $border-radius;
+        border-radius: $border-radius-element;
         text-align: center;
         color: $clr-white;
         cursor: pointer;
@@ -180,7 +181,8 @@ input {
         }
       }
 
-      input:not([type='number']) {
+      // Radio buttons
+      input[type='radio'] {
         opacity: 0;
         width: 0;
         height: 0;
@@ -218,7 +220,7 @@ input {
   &__output {
     background-color: $clr-dark-cyan;
     padding: 1.5rem;
-    border-radius: 20px;
+    border-radius: $border-radius-card;
     margin: 1rem 0;
 
     &__item {

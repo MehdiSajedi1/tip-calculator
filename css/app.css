@@ -24,7 +24,8 @@ input {
     text-align: right;
     padding: 5px 15px;
     width: 100%;
-    border-radius: 5px; }
+    border-radius: 5px;
+    -webkit-appearance: none; }
     input[type='number']:active, input[type='number']:focus {
       border: 2px solid #26c0ab; }
   input[type='radio'] {
@@ -48,14 +49,13 @@ input {
   background-color: #26c0ab;
   color: #00494d;
   cursor: pointer;
-  transition: all 0.25s ease-in;
-  border: 3px solid #26c0ab; }
+  transition: all 0.25s ease-in; }
   .btn--reset {
-    margin-top: 1.5rem; }
-  .btn:focus, .btn:hover {
-    background-color: #00494d;
-    color: #26c0ab;
-    border: 3px solid #26c0ab; }
+    margin-top: 1.5rem;
+    -webkit-appearance: none; }
+  .btn:hover, .btn:focus-visible {
+    background-color: #a4dbd2;
+    color: #00494d; }
 
 .header__text {
   text-transform: uppercase;
@@ -67,8 +67,8 @@ input {
   color: #00494d; }
 
 .app-container {
-  background-color: white;
-  border-radius: 20px 20px 0 0; }
+  background-color: #fff;
+  border-radius: 20px; }
 
 .app {
   width: 85vw;
@@ -112,13 +112,13 @@ input {
     background-color: #00494d;
     border-radius: 5px;
     text-align: center;
-    color: white;
+    color: #fff;
     cursor: pointer;
     transition: all 0.25s ease-in; }
     .form__tip__options label:hover {
       background-color: #a4dbd2;
       color: #00494d; }
-  .form__tip__options input:not([type='number']) {
+  .form__tip__options input[type='radio'] {
     opacity: 0;
     width: 0;
     height: 0; }
@@ -149,34 +149,33 @@ input {
       color: #26c0ab;
       font-size: 2rem; }
     .form__output__item p {
-      color: white; }
+      color: #fff; }
     .form__output__item small {
       color: #7f9c9f; }
 
 @media (min-width: 992px) {
   body {
     height: 100vh; }
-  .wrappuh {
+  .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    padding-top: 5vh; }
+    padding-top: 50px; }
   .header {
-    margin-bottom: 4vh; }
+    margin-bottom: 40px; }
   .app-container {
-    border-radius: 20px;
-    width: 950px; }
+    width: clamp(950px, 70vw, 1200px); }
   .app {
     width: 93%; }
   .form {
     display: flex;
-    column-gap: 2rem; }
+    justify-content: space-between; }
     .form__user-inputs {
       padding: 1rem 1rem 1rem 0;
-      width: 50%; }
+      width: 48.5%; }
     .form__output {
-      width: 50%;
+      width: 48.5%;
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
