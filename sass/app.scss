@@ -12,6 +12,7 @@ $clr-error: #d67272;
 $border-radius-element: 5px;
 $border-radius-card: 20px;
 $transition: all 0.25s ease-in;
+$transition-border: border 0.15s ease-in;
 
 * {
   margin: 0;
@@ -40,6 +41,7 @@ input {
     padding: 5px 15px;
     width: 100%;
     border-radius: $border-radius-element;
+    transition: $transition-border;
     -webkit-appearance: none;
 
     &:active,

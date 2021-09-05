@@ -7,8 +7,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    padding-top: 50px;
+    justify-content: center;
+    height: clamp(700px, 65%, 100%);
   }
 
   .header {

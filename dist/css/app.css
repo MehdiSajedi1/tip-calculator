@@ -25,6 +25,7 @@ input {
     padding: 5px 15px;
     width: 100%;
     border-radius: 5px;
+    transition: border 0.15s ease-in;
     -webkit-appearance: none; }
     input[type='number']:active, input[type='number']:focus {
       border: 2px solid #26c0ab; }
@@ -160,8 +161,8 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    padding-top: 50px; }
+    justify-content: center;
+    height: clamp(700px, 65%, 100%); }
   .header {
     margin-bottom: 40px; }
   .app-container {
