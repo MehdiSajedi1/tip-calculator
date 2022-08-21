@@ -1,13 +1,16 @@
 {
   "name": "tip-calculator",
   "version": "1.0.0",
-  "description": "![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
+  "author": "Mehdi Sajedi <mehdiisajedi@gmail.com>",
+  "description": "Tip calculator coding challenge for frontendmentor.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mehdi-sajedi/tip-calculator"
+  },
   "scripts": {
     "sass": "node-sass sass/app.scss dist/css/app.css -w"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "node-sass": "^6.0.1"
